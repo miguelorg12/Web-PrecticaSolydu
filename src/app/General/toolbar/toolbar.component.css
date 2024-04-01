@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.toolbar {
+    background-color: black;
+}
+.texto-toolbar {
+    color: white;
+}
+
+.button-sidenav {
+    color: white;
+}

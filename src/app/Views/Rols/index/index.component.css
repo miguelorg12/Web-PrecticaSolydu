@@ -1,0 +1,21 @@
+.table {
+    width: 80%;
+    margin: auto;
+  }
+.header-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% auto 0 auto;
+}
+
+.header-container h1 {
+    text-align: left;
+    font-weight: bold;
+}
+
+.header-container a {
+    text-decoration: none;
+    color: inherit;
+}

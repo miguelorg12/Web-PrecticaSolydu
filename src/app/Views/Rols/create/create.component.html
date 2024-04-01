@@ -1,0 +1,19 @@
+<app-toolbar></app-toolbar>
+<div class="container">
+    <form [formGroup]="createForm">
+        <h1 class="login-title">Crear Rol</h1>
+        <div class="example-container form-fields">
+            <mat-form-field appearance="fill">
+                <mat-label>Ingrese el nombre del rol</mat-label>
+                <input matInput placeholder="Nombre del rol" formControlName="rol">
+                <div *ngIf="createForm.controls['rol'].errors">
+                    <mat-error *ngIf="createForm.controls['rol'].errors['required']">El nombre del rol es requerido</mat-error>
+                    <mat-error *ngIf="createForm.controls['rol'].errors['minlength']">El mínimo de caracteres es 2</mat-error>
+                    <mat-error *ngIf="createForm.controls['rol'].errors['maxlength']">El máximo de caracteres es 20</mat-error>
+                    <mat-error *ngIf="createForm.controls['rol'].errors['pattern']">El nombre del rol solo puede contener letras y espacios</mat-error>
+                </div>
+            </mat-form-field>
+            <button mat-raised-button (click)="create()" class="button-login">Crear Rol</button>
+        </div>
+    </form>
+</div>

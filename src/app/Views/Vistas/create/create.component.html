@@ -1,0 +1,19 @@
+<app-toolbar></app-toolbar>
+<div class="container">
+    <form [formGroup]="createForm">
+        <h1 class="login-title">Crear Vista</h1>
+        <div class="example-container form-fields">
+            <mat-form-field appearance="fill">
+                <mat-label>Ingrese el nombre de la vista</mat-label>
+                <input matInput placeholder="Nombre de la vista" formControlName="name">
+                <div *ngIf="createForm.controls['name'].errors">
+                    <mat-error *ngIf="createForm.controls['name'].errors['required']">El nombre de la vista es requerido</mat-error>
+                    <mat-error *ngIf="createForm.controls['name'].errors['minlength']">El mínimo de caracteres es 2</mat-error>
+                    <mat-error *ngIf="createForm.controls['name'].errors['maxlength']">El máximo de caracteres es 20</mat-error>
+                    <mat-error *ngIf="createForm.controls['name'].errors['pattern']">El nombre de la vista solo puede contener letras y espacios</mat-error>
+                </div>
+            </mat-form-field>
+            <button mat-raised-button (click)="create()" class="button-login">Crear Vista</button>
+        </div>
+    </form>
+</div>

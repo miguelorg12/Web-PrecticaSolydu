@@ -1,0 +1,38 @@
+<app-side-nav>
+    <div class="header-container">
+        <h1>Vistas</h1>
+        <a mat-raised-button color="black" [routerLink]="['/vistas/create']">
+            <mat-icon>add</mat-icon>
+            Crear Vista
+        </a>
+    </div>
+    <div class="mat-elevation-z8 table">
+        <table mat-table [dataSource]="views" class="mat-elevation-z8">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let view"> {{view.id}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let view"> {{view.name}} </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let view"> 
+                    <a mat-icon-button color="primary" [routerLink] = "['/users']">
+                        <mat-icon>edit</mat-icon>
+                    </a> 
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</app-side-nav>
