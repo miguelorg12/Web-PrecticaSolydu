@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.checkbox-container {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    margin-bottom: 10px;
+}
+
+.update-button {
+    align-self: center;
+}

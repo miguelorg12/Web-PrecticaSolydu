@@ -1,0 +1,10 @@
+<div class="container">
+    <h1 class="title">Roles-Vistas</h1>
+    <div class="checkbox-container">
+        <div *ngFor="let view of views" class="checkbox-item">
+            <mat-checkbox [checked]="isViewInRole(view.id)"
+            (change)="cambioVistas(view.id, $event.checked)">{{ view.name }}</mat-checkbox>
+        </div>
+    </div>
+    <button mat-raised-button (click)="updateRoleView()" class="update-button">Actualizar</button>
+</div>

@@ -25,10 +25,10 @@
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <div *ngIf="registerform.controls['password'].errors">
-                      <mat-error *ngIf="registerform.controls['password'].errors['required']">La contraseña es requerida</mat-error>
-                    </div>
                 </mat-form-field>
+                <div *ngIf="registerform.controls['password'].errors">
+                    <mat-error *ngIf="registerform.controls['password'].errors['required']">La contraseña es requerida</mat-error>
+                </div>
                   <button  mat-raised-button  (click)="register()" class="button-login">Crear Cuenta</button>
             </div>
     </form>

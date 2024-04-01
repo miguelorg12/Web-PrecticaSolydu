@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 import { environment } from '../environments/environment';
 import { Views } from '../Models/views.model';
 @Injectable({
@@ -8,9 +9,9 @@ import { Views } from '../Models/views.model';
 })
 export class ViewsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookie:CookieService) { }
 
-  private token = localStorage.getItem('token');
+  private token = this.cookie.get('token');
   private headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token);
 
   getViews(): Observable<Views[]> {

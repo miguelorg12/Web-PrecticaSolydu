@@ -20,6 +20,9 @@
                   <mat-error *ngIf="loginform.controls['password'].errors['required']">La contraseña es requerida</mat-error>
                 </div>
               </mat-form-field>
+              <div *ngIf="backendErrors" class="">
+                <mat-error>{{ backendErrors }}</mat-error>
+              </div>
               <button  mat-raised-button  (click)="login()" class="button-login">Ingresar</button>
         </div>
 </form>

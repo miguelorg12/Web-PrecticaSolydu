@@ -1,1 +1,26 @@
-<p>update works!</p>
+<app-toolbar></app-toolbar>
+<div class="container">
+    <form [formGroup]="updateform">
+        <h1 class="login-title">Actualizar Usuario</h1>
+        <div class="example-container form-fields">
+            <mat-form-field appearance="fill">
+                <mat-label>Ingrese el nombre del usuario</mat-label>
+                <input matInput placeholder="Nombre del usuario" formControlName="name">
+                <div *ngIf="updateform.controls['name'].errors">
+                    <mat-error *ngIf="updateform.controls['name'].errors['required']">El nombre del usuario es requerido</mat-error>
+                    <mat-error *ngIf="updateform.controls['name'].errors['minlength']">El mínimo de caracteres es 2</mat-error>
+                    <mat-error *ngIf="updateform.controls['name'].errors['maxlength']">El máximo de caracteres es 20</mat-error>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccione el rol</mat-label>
+                <mat-select formControlName="role_id">
+                    <mat-option *ngFor="let role of roles" [value]="role.id">
+                        {{role.rol}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button (click)="update()" class="button-login">Actualizar Usuario</button>
+        </div>
+    </form>
+</div>

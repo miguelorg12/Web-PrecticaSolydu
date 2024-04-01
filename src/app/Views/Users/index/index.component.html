@@ -22,13 +22,13 @@
 
             <ng-container matColumnDef="rol">
                 <th mat-header-cell *matHeaderCellDef> Rol </th>
-                <td mat-cell *matCellDef="let user"> {{user.role_id}} </td>
+                <td mat-cell *matCellDef="let user"> {{user.role.rol}} </td>
             </ng-container>
             <!-- Actions Column -->
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef> Acciones </th>
                 <td mat-cell *matCellDef="let user">
-                    <a mat-icon-button color="primary" [routerLink] = "['/users']">
+                    <a mat-icon-button color="primary" [routerLink] = "['/users/update', user.id]">
                         <mat-icon>edit</mat-icon>
                     </a> 
                     <button mat-icon-button color="warn" (click)="deleteUser(user.id)">

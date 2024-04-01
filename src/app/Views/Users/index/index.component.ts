@@ -25,6 +25,8 @@ export class IndexComponent implements AfterContentInit {
     });
   }
   deleteUser(id: number) {
-    // implementar la lógica de eliminación aquí
+    this.userService.deleteUser(id).subscribe(() => {
+      this.users = this.users.filter(user => user.id !== id);
+    });
   }
 }

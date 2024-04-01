@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { User, UserLogin, UserUpdate, UserRegister } from '../Models/user.model';
@@ -8,8 +9,8 @@ import { User, UserLogin, UserUpdate, UserRegister } from '../Models/user.model'
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
-  private token = localStorage.getItem('token');
+  constructor(private http:HttpClient, private cookie:CookieService) { }
+  private token = this.cookie.get('token');
   private headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token);
   
   login(user:UserLogin):Observable<UserLogin>{
